@@ -56,5 +56,5 @@
     "@types/styled-components": "^5.1.34",
     "http-proxy-middleware": "^3.0.3"
   },
-  "homepage": "https://lastro1206.github.io/crypto-traker"
+  "homepage": "https://lastro1206.github.io/crypto-tracker"
 }
