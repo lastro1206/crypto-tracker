@@ -63,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const ThemeToggleButton = styled.button`
+const ToggleDark = styled.button`
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -83,15 +83,15 @@ const ThemeToggleButton = styled.button`
 `;
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const toggleTheme = () => setIsDarkMode((prev) => !prev);
+  const [isDark, setIsDark] = useState(false);
+  const toggleDark = () => setIsDark((prev) => !prev);
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
       <GlobalStyle />
-      <ThemeToggleButton onClick={toggleTheme}>
-        {isDarkMode ? "라이트 모드" : "다크 모드"}
-      </ThemeToggleButton>
-      <Router />
+      <Router
+        isDark={isDark}
+        toggleDark={toggleDark}
+      />
       <ReactQueryDevtools initialIsOpen={true} />
     </ThemeProvider>
   );
